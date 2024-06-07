@@ -10,6 +10,7 @@ export const userLogin = createAsyncThunk(
             if(data.success){
                 localStorage.setItem('token',data.token);
                 toast.success(data.message);
+                window.location.replace('/');
             }
             return data;
         } catch (error) {
@@ -29,7 +30,8 @@ export const userRegister = createAsyncThunk(
         try {
             const {data} = await API.post('/auth/register',{email,password,name,role,phone,address,hospitalName,organizationName,webSite});
             if(data.success){
-                toast.success(data.message);
+                alert(data.message);
+                window.location.replace('/login');
             }
             return data;
         } catch (error) {
@@ -48,7 +50,7 @@ export const getCurrentUser = createAsyncThunk(
     async ({ rejectWithValue }) => {
       try {
         const res = await API.get("/auth/currentUser");
-        if (res.data) {
+        if (res?.data) {
           return res?.data;
         }
       } catch (error) {

@@ -11,7 +11,7 @@ const initialState = {
 }
 
 const authSlice = createSlice({
-    name:"auth",
+    name:"auth1",
     initialState,
     reducers:{},
     extraReducers:(builder) => {
@@ -23,6 +23,7 @@ const authSlice = createSlice({
             state.loading = false;
             state.user = payload.user;
             state.token = payload.token;
+            console.log(state.user);
         })
         builder.addCase(userLogin.rejected,(state, {payload}) => {
             state.loading = false;

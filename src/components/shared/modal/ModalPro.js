@@ -72,7 +72,7 @@ const ModalPro = () => {
                         <option value={"B+"}>B+</option>
                         <option value={"B-"}>B-</option>
                     </select>
-                    <InputType labelFor="Donar Email" labelText={"Donar Email"} inputType={"email"} name={"email"} value={email} onChange={(e) => setEmail(e.target.value)}/>
+                    <InputType labelFor="Email" labelText={"Email"} inputType={"email"} name={"email"} value={email} onChange={(e) => setEmail(e.target.value)}/>
                     <InputType labelText={"Quantity (ML)"} labelFor={"quantity"} inputType={"number"} name={"quantity"} value={quantity}  onChange={(e) => setQuantity(e.target.value)} />
                 </div>
                 <div className="modal-footer">
